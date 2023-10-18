@@ -18,14 +18,18 @@ Route::get('/', function () {
 });
 
 Route::get('/services', function () {
-    return view('services');
+    return view('services.services');
 });
 
 Route::get('/projects', function () {
-    return view('projects');
+    return view('projects.projects');
 });
 
 Route::get('/abouts', function () {
-    return view('about');
+    return view('abouts.about');
+});
+
+Route::get('/contacts', function () {
+    return view('contacts.contacts');
 });
 

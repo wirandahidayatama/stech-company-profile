@@ -26,6 +26,8 @@
 
         <!-- Template Stylesheet -->
         <link href=" {{asset('tema/css/style.css')}} " rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
     <body>
@@ -59,7 +61,7 @@
         <div class="container-fluid bg-primary">
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="{{ url('/') }}" class="navbar-brand">
                         <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
                     </a>
                     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -67,10 +69,11 @@
                     </button>
                     <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <a href="/" class="nav-item nav-link active text-secondary">Home</a>
-                            <a href="{{ url('/abouts') }}" class="nav-item nav-link">Abouts</a>
-                            <a href=" {{ url('/services') }} " class="nav-item nav-link">Services</a>
-                            <a href="{{ url('/projects') }}" class="nav-item nav-link">Projects</a>
+                            <a href="{{ url('/') }}" class="nav-item nav-link {{ Request::is('/') ? 'active text-secondary' : '' }} ">Home</a>
+                            <a href="{{ url('/abouts') }}" class="nav-item nav-link {{ Request::is('abouts') ? 'active text-secondary' : '' }} ">Abouts</a>
+                            <a href=" {{ url('/services') }} " class="nav-item nav-link {{ Request::is('services') ? 'active text-secondary' : '' }}">Services</a>
+                            <a href="{{ url('/projects') }}" class="nav-item nav-link {{ Request::is('projects') ? 'active text-secondary' : '' }}">Projects</a>
+                            <a href="{{ url('/contacts') }}" class="nav-item nav-link {{ Request::is('contacts') ? 'active text-secondary' : '' }}">Contacts</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded">
@@ -80,9 +83,11 @@
                                     <a href="404.html" class="dropdown-item">404 Page</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
+
+                    <a href="#" class="btn btn-info"><i class="fa-solid fa-right-to-bracket"></i> LOGIN</a>
+
                     <div class="d-none d-xl-flex flex-shirink-0">
                         <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
                             <a href="" class="position-relative animated tada infinite">
