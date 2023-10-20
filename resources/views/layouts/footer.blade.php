@@ -5,7 +5,7 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <a href="index.html">
-                            <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
+                            <h3 class="text-white fw-bold d-block">STECH<span class="text-secondary"> INDOENESIA</span> </h3>
                         </a>
                         <p class="mt-4 text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere delectus qui placeat inventore consectetur repellendus optio debitis.</p>
                         <div class="d-flex hightech-link">
@@ -38,20 +38,20 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Contact Us</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> 123 Street, New York, USA</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +123 456 7890</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> info@exmple.con</a>
+                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Pondok Gede,Bekasi</a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> 0821 4567 1234</a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> stech@gmail.con</a>
                         </div>
                     </div>
                 </div>
                 <hr class="text-light mt-5 mb-4">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start">
-                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>S-TECH INDONESIA</a>, All right reserved.</span>
+                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>S-TECH INDONESIA</a></span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         {{-- <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-secondary">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a></span> --}}
-                        <span class="text-light">Designed By <span class="text-secondary">Wiranda</span></span>
+                        <span class="text-light">Designed By <span class="text-secondary">Stech | 2023</span></span>
                     </div>
                 </div>
             </div>
@@ -68,6 +68,16 @@
         <script src=" {{ asset('tema/lib/easing/easing.min.js') }} "></script>
         <script src=" {{ asset('tema/lib/waypoints/waypoints.min.js') }} "></script>
         <script src=" {{ asset('tema/lib/owlcarousel/owl.carousel.min.js') }} "></script>
+
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src=" {{ asset('tema/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- overlayScrollbars -->
+        <script src=" {{ asset('tema/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src=" {{ asset('tema/dist/js/adminlte.min.js') }}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src=" {{ asset('tema/dist/js/demo.js') }}"></script>
 
         <!-- Template Javascript -->
         <script src=" {{ asset('tema/js/main.js') }} "></script>

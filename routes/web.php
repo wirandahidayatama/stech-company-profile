@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,4 +38,16 @@ Route::get('/about/details', function () {
     return view('abouts.detail');
 });
 
+Route::get('/login', function () {
+    return view('auth/login');
+});
 
+// HALAMAN ADMIN
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/dashboard',function () {
+        return view('admin.dashboard');
+    });
+
+    Route::resource('/user', AdminUserController::class);
+});
