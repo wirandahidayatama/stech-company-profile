@@ -1,11 +1,11 @@
 @extends('admin.layouts_admin.template')
 
 @section('judul')
-User
+Banner
 @endsection
 
 @section('judul_halaman')
-Tambah User
+Tambah Banner
 @endsection
 
 @section('main')
@@ -16,13 +16,13 @@ Tambah User
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('user.store') }}" method="POST">
+                            <form action="{{ route('banner.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for=""><b>Nama</b></label>
-                                    <input type="name" name="name" class="form-control @error('name') is-invalid @enderror"
-                                    placeholder="name" value="{{ old('name') }}">
-                                    @error('name')
+                                    <label for=""><b>Judul Headline</b></label>
+                                    <input type="text" name="judul_headline" class="form-control @error('judul_headline') is-invalid @enderror"
+                                    placeholder="Judul Headline" value="{{ old('judul_headline') }}">
+                                    @error('judul_headline')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -30,10 +30,10 @@ Tambah User
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""><b>Email</b></label>
-                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                                    placeholder="Email" value="{{ old('email') }}">
-                                    @error('email')
+                                    <label for=""><b>Headline</b></label>
+                                    <input type="text" name="headline" class="form-control @error('headline') is-invalid @enderror"
+                                    placeholder="Headline" value="{{ old('headline') }}">
+                                    @error('headline')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -41,10 +41,10 @@ Tambah User
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""><b>Password</b></label>
-                                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                                    placeholder="********">
-                                    @error('password')
+                                    <label for=""><b>Deskripsi</b></label>
+                                    <input type="text" name="description" class="form-control @error('description') is-invalid @enderror"
+                                    placeholder="description" value="{{ old('description') }}">
+                                    @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -52,9 +52,10 @@ Tambah User
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""><b>Konfirmasi Password</b></label>
-                                    <input type="password" name="re_password" class="form-control @error('re_password') is-invalid @enderror" placeholder="********">
-                                    @error('re_password')
+                                    <label for=""><b>Gambar</b></label>
+                                    <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror"
+                                    placeholder="gambar" value="{{ old('gambar') }}">
+                                    @error('gambar')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -62,7 +63,7 @@ Tambah User
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                <a href="{{ route('user.index') }}" class="btn btn-warning">Kembali</a>
+                                <a href="{{ route('banner.index') }}" class="btn btn-warning">Kembali</a>
                             </form>
                         </div>
                     </div>

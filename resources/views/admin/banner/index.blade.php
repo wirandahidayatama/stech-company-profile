@@ -1,11 +1,11 @@
 @extends('admin.layouts_admin.template')
 
 @section('judul')
-User
+Banner
 @endsection
 
 @section('judul_halaman')
-Menu User
+Menu Banner
 @endsection
 
 @section('main')
@@ -22,23 +22,27 @@ Menu User
                             </div>
                             @endif --}}
                             <div class="card-body">
-                                <a href="{{ route('user.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"> Tambah Data</i></a>
+                                <a href="{{ route('banner.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"> Tambah Data</i></a>
                                 <table class="table">
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
+                                        <th>Gambar</th>
+                                        <th>Judul Headline</th>
+                                        <th>Headline</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                     </tr>
-                                    @foreach ($user as $item)
+                                    @foreach ($banner as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->email }}</td>
+                                        <td><img src="/{{ $item->gambar }}" width="100px" alt=""></td>
+                                        <td>{{ $item->judul_headline }}</td>
+                                        <td>{{ $item->headline }}</td>
+                                        <td>{{ $item->description }}</td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="{{ route('user.edit',$item->id) }}" class="btn btn-success mx-2"> <i class="fas fa-edit"></i>Edit</a>
-                                                <form method="POST" action="{{ route('user.destroy', $item->id) }}">
+                                                <a href="{{ route('banner.edit',$item->id) }}" class="btn btn-success mx-2"> <i class="fas fa-edit"></i>Edit</a>
+                                                <form method="POST" action="{{ route('banner.destroy', $item->id) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger" data-confirm-delete="true" ><i class="fas fa-trash"></i> Hapus</button>

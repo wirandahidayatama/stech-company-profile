@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AdminUserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdminBannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +51,5 @@ Route::prefix('/admin')->group(function () {
     });
 
     Route::resource('/user', AdminUserController::class);
+    Route::resource('/banner', AdminBannerController::class);
 });

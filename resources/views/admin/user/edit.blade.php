@@ -5,7 +5,7 @@ User
 @endsection
 
 @section('judul_halaman')
-Tambah User
+Edit User
 @endsection
 
 @section('main')
@@ -16,12 +16,13 @@ Tambah User
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('user.store') }}" method="POST">
+                            <form action="{{ route('user.update',$user->id) }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for=""><b>Nama</b></label>
                                     <input type="name" name="name" class="form-control @error('name') is-invalid @enderror"
-                                    placeholder="name" value="{{ old('name') }}">
+                                    placeholder="name" value="{{ old('name', $user->name) }}">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -32,7 +33,7 @@ Tambah User
                                 <div class="form-group">
                                     <label for=""><b>Email</b></label>
                                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                                    placeholder="Email" value="{{ old('email') }}">
+                                    placeholder="Email" value="{{ old('email', $user->email)  }}">
                                     @error('email')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -53,7 +54,7 @@ Tambah User
 
                                 <div class="form-group">
                                     <label for=""><b>Konfirmasi Password</b></label>
-                                    <input type="password" name="re_password" class="form-control @error('re_password') is-invalid @enderror" placeholder="********">
+                                    <input type="password" name="re_password" class="form-control @error('re_password') is-invalid @enderror " placeholder="********">
                                     @error('re_password')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -62,7 +63,6 @@ Tambah User
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                <a href="{{ route('user.index') }}" class="btn btn-warning">Kembali</a>
                             </form>
                         </div>
                     </div>
